@@ -51,7 +51,7 @@ module.exports = {
             } else {
                 const allNotes = await Notes.find({
                    created_by: userId.toHexString()
-                }, "_id title notes isActive")
+                }, "_id title notes isActive color")
                     .skip(skip)
                     .limit(limit)
                     .sort({ createdAt: 'desc' });
