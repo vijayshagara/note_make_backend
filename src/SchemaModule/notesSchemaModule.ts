@@ -22,6 +22,10 @@ const notesSchema = new Schema({
         type: Boolean,
         default: true
     },
+    color:{
+        type: String,
+        required: true 
+    },
     created_by: {
         type: Schema.Types.ObjectId,
         ref: "User",

@@ -12,10 +12,6 @@ module.exports = {
 
         try {
             const userId = res.locals.user;
-            // let created_user = await User.findById(userId, "_id name email");
-            // if (!created_user) {
-            //     return res.status(404).send({ error: 'User not found' });
-            // }
             req.body.created_by = new ObjectId(userId);
             console.log('============',req.body);
             
@@ -24,16 +20,12 @@ module.exports = {
         } catch (error) {
             console.log("error======",error);
             
-           // next(error); // Handle errors appropriately
+           next(error); // Handle errors appropriately
         }
     },
     allProducts: async (req: Request, res: Response, next: NextFunction) => {
         const userId = res.locals.user
         console.log('userId===', userId.toHexString());
-
-        // const userId = '658bbb107bd54fca6a39d267';
-        // const createdBy = new ObjectId(userId);
-        
         let limit = 9
         let pageNo = 1
         let skip = 0
