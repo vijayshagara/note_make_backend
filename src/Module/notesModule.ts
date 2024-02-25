@@ -43,7 +43,7 @@ module.exports = {
             if (req.query && req.query.notes) {
                 const name = req.query.notes as string
                 if (name.length >= 1) {
-                    searchNotes = await Notes.find({ title: { $regex: `^${name}`, $options: 'i' } }, "_id title notes isActive").skip(skip).limit(limit).sort({ title: 'asc' });
+                    searchNotes = await Notes.find({ title: { $regex: `^${name}`, $options: 'i' } }, "_id title notes isActive color").skip(skip).limit(limit).sort({ title: 'asc' });
                     const jsonString = CircularJSON.stringify(searchNotes);
                     const jsonObject = JSON.parse(jsonString)
                     return res.status(200).send(jsonObject);
