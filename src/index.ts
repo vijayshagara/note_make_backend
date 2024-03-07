@@ -5,10 +5,12 @@ import { configDotenv } from 'dotenv';
 import helmet from 'helmet';
 import {connectDb} from '../src/db'
 import Router  from './Router/user'
+const cors = require('cors')
 const app = express()
 app.use(helmet());
 app.use(express.json());
 configDotenv()
+app.use(cors())
 
 const PORT = process.env.APP_PORT || 4000
 
