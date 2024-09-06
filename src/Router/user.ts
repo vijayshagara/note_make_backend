@@ -11,7 +11,7 @@ router.get("/info", checkForUser, info);
 
 //product
 router.post("/add-notes",checkForUser,addNotes)
-router.get("/all-notes",checkForUser, allProducts)
+router.get("/all-notes", allProducts)
 router.get("/notes/:id",  singleProducts)
 router.delete("/delete-notes/:id", deleteProduct)
 router.put("/update-notes/:id", updateProduct)
